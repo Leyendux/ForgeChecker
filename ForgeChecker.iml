@@ -4,14 +4,15 @@
     <facet type="IntelliGuard" name="Obfuscation">
       <configuration>
         <option name="yGuardJar" value="D:\Downloads\yguard-2.7.1\lib\yguard.jar" />
-        <option name="mainclass" value="leyendux.github.io.Main" />
+        <option name="inFile" value="C:\Users\Jonathan\Documents\GitHub\ForgeChecker\ForgeChecker.jar" />
+        <option name="outFile" value="C:\Users\Jonathan\Documents\GitHub\ForgeChecker\ForgeChecker-1.0-OBF.jar" />
+        <option name="mainclass" value="leyendux.github.io.forgechecker.Main" />
         <option name="namingScheme" value="best" />
         <option name="jarConfig">
           <JarConfig>
             <option name="jarEntries">
               <list>
                 <option value="C:\Users\Jonathan\Documents\GitHub\ForgeChecker\target\classes" />
-                <option value="C:\Users\Jonathan\Documents\GitHub\ForgeChecker\src\main\resources\plugin.yml" />
               </list>
             </option>
           </JarConfig>

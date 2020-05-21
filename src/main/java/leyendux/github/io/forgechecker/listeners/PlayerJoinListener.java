@@ -37,7 +37,7 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onForgeUserJoinEvent(ForgeUserJoinEvent event) {
         ServerPlayer serverPlayer = event.getServerPlayer();
-        MethodUtils.broadcastStaff(StringUtils.PREFIX.getName() + "§7is using §cForge Client §8(§eFML|HS§8)");
+        MethodUtils.broadcastStaff(StringUtils.PREFIX.getName() + "§e" + serverPlayer.getName() + " §7is using §cForge Client §8(§eFML|HS§8)");
         serverPlayer.setForgeUser(true);
         serverPlayer.setModList(event.getModList());
     }

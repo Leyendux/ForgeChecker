@@ -13,6 +13,9 @@ public class ForgeCheckCMD implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] arguments) {
+        if(arguments.length < 1) {
+            return false;
+        }
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(arguments[0]);
         if((offlinePlayer == null) || (!MethodUtils.getPlayerManager().availableServerPlayer(offlinePlayer.getUniqueId()))) {
             commandSender.sendMessage(ChatColor.RED + "This player is not available!");

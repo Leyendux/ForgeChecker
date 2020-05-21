@@ -1,11 +1,12 @@
 leyendux\github\io\forgechecker\listeners\PlayerJoinListener.class
-leyendux\github\io\forgechecker\commands\ForgeCheckCMD.class
-leyendux\github\io\forgechecker\events\ServerPlayerJoinEvent.class
 leyendux\github\io\forgechecker\listeners\ServerMessageListener.class
 leyendux\github\io\forgechecker\Main.class
 leyendux\github\io\forgechecker\events\ForgeUserJoinEvent.class
 leyendux\github\io\forgechecker\util\StringUtils.class
-leyendux\github\io\forgechecker\util\MethodUtils.class
 leyendux\github\io\forgechecker\player\ServerPlayer.class
 leyendux\github\io\forgechecker\manager\PlayerManager.class
 leyendux\github\io\forgechecker\player\ServerPlayer$1.class
+leyendux\github\io\forgechecker\commands\ForgeCheckCMD.class
+leyendux\github\io\forgechecker\events\ServerPlayerJoinEvent.class
+leyendux\github\io\forgechecker\util\MethodUtils.class
+leyendux\github\io\forgechecker\commands\ForgeUsersCMD.class

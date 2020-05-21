@@ -38,6 +38,15 @@ public class MethodUtils {
         return mods;
     }
 
+    public static String formatForgeUsers(Set<String> forgeUsers) {
+        String mods = "§8» §e" + forgeUsers.size() + " players found:\n" +
+                "§8» §e" + forgeUsers.toString()
+                .replace("[", "§8[§e")
+                .replace("]", "§8]")
+                .replace(",", "§8,§e");
+        return mods;
+    }
+
     //Read bytes that are sent from player's FML|HS channel
     public static Map getModData(byte[] data) {
         Map<String, String> mods = new HashMap();

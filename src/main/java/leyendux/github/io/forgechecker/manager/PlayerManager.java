@@ -3,6 +3,8 @@ package leyendux.github.io.forgechecker.manager;
 import leyendux.github.io.forgechecker.player.ServerPlayer;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 public class PlayerManager {
@@ -25,4 +27,14 @@ public class PlayerManager {
     public void createServerPlayer(UUID uuid) { serverPlayers.put(uuid, new ServerPlayer(uuid)); }
 
     public boolean availableServerPlayer(UUID uuid) { return serverPlayers.containsKey(uuid); }
+
+    public Set<String> getForgeUsers() {
+        Set<String> forgeUsers = new HashSet<String>();
+        for(ServerPlayer serverPlayer : serverPlayers.values()) {
+            if(serverPlayer.isForgeUser()) {
+                forgeUsers.add(serverPlayer.getName());
+            }
+        }
+        return forgeUsers;
+    }
 }

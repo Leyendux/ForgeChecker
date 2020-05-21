@@ -1,6 +1,7 @@
 package leyendux.github.io.forgechecker;
 
 import leyendux.github.io.forgechecker.commands.ForgeCheckCMD;
+import leyendux.github.io.forgechecker.commands.ForgeUsersCMD;
 import leyendux.github.io.forgechecker.listeners.PlayerJoinListener;
 import leyendux.github.io.forgechecker.listeners.ServerMessageListener;
 import leyendux.github.io.forgechecker.util.MethodUtils;
@@ -38,5 +39,6 @@ public class Main extends JavaPlugin {
 
     private void registerCommands() {
         getCommand("forgecheck").setExecutor(new ForgeCheckCMD());
+        getCommand("forgeusers").setExecutor(new ForgeUsersCMD());
     }
 }

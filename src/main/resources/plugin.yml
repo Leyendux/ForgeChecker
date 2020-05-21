@@ -12,3 +12,8 @@ commands:
     permission: uhc.mod
     permission-message: §cThis command is only made for mods, sorry!
     usage: §c/<command> [player]
+  forgeusers:
+    description: Return a list of the players that are using Forge
+    permission: uhc.mod
+    permission-message: §cThis command is only made for mods, sorry!
+    usage: §c/<command>

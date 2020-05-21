@@ -1,6 +1,6 @@
 name: LeyenduxForgeChecker
 main: leyendux.github.io.forgechecker.Main
-version: 1.0
+version: 1.0.1
 
 description: Plugin made to check forge mods of all players from the server.
 author: Leyendux
@@ -10,5 +10,10 @@ commands:
   forgecheck:
     description: Check if a player is using Forge
     permission: uhc.mod
-    permission-message: �cThis command is only made for mods, sorry!
-    usage: �c/<command> [player]
+    permission-message: §cThis command is only made for mods, sorry!
+    usage: §c/<command> [player]
+  forgeusers:
+    description: Return a list of the players that are using Forge
+    permission: uhc.mod
+    permission-message: §cThis command is only made for mods, sorry!
+    usage: §c/<command>

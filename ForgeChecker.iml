@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="IntelliGuard" name="Obfuscation">
+      <configuration>
+        <option name="yGuardJar" value="D:\Downloads\yguard-2.7.1\lib\yguard.jar" />
+        <option name="mainclass" value="leyendux.github.io.Main" />
+        <option name="namingScheme" value="best" />
+        <option name="jarConfig">
+          <JarConfig>
+            <option name="jarEntries">
+              <list>
+                <option value="C:\Users\Jonathan\Documents\GitHub\ForgeChecker\target\classes" />
+                <option value="C:\Users\Jonathan\Documents\GitHub\ForgeChecker\src\main\resources\plugin.yml" />
+              </list>
+            </option>
+          </JarConfig>
+        </option>
+      </configuration>
+    </facet>
+  </component>
+</module>

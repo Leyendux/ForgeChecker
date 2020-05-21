@@ -2,6 +2,10 @@ package leyendux.github.io.forgechecker.util;
 
 import leyendux.github.io.forgechecker.Main;
 import leyendux.github.io.forgechecker.manager.PlayerManager;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
@@ -14,11 +18,11 @@ import java.util.Set;
 public class MethodUtils {
 
     //Easy method to broadcast all members that has the permission that is set in StringUtils class
-    public static void broadcastStaff(String message) {
+    public static void broadcastStaff(TextComponent message) {
         for(Player player : Bukkit.getServer().getOnlinePlayers()) {
             //Check if the player has the permission then send a message
             if(player.hasPermission(StringUtils.PERMISSION.getName())) {
-                player.sendMessage(message);
+                player.spigot().sendMessage(message);
             }
         }
     }
@@ -67,6 +71,13 @@ public class MethodUtils {
             i = end;
         }
         return mods;
+    }
+
+    public static TextComponent createClickableChat(String text, String command, String showText, String action) {
+        TextComponent textComponent = new TextComponent(text);
+        textComponent.setClickEvent(new ClickEvent(ClickEvent.Action.valueOf(action), command));
+        textComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(showText).create()));
+        return textComponent;
     }
 
     //Easy methods to register channels from Main class

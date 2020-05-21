@@ -5,6 +5,7 @@ import leyendux.github.io.forgechecker.events.ServerPlayerJoinEvent;
 import leyendux.github.io.forgechecker.player.ServerPlayer;
 import leyendux.github.io.forgechecker.util.MethodUtils;
 import leyendux.github.io.forgechecker.util.StringUtils;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -37,7 +38,8 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onForgeUserJoinEvent(ForgeUserJoinEvent event) {
         ServerPlayer serverPlayer = event.getServerPlayer();
-        MethodUtils.broadcastStaff(StringUtils.PREFIX.getName() + "§e" + serverPlayer.getName() + " §7is using §cForge Client §8(§eFML|HS§8)");
+        TextComponent message = MethodUtils.createClickableChat(StringUtils.PREFIX.getName() + "§e" + serverPlayer.getName() + " §7is using §cForge Client §8(§eFML|HS§8)", "/forgecheck " + serverPlayer.getName(), "§aClick to check mods!", "RUN_COMMAND");
+        MethodUtils.broadcastStaff(message);
         serverPlayer.setForgeUser(true);
         serverPlayer.setModList(event.getModList());
     }

@@ -6,7 +6,7 @@
 
     <groupId>leyendux.github.io</groupId>
     <artifactId>ForgeChecker</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <build>
         <resources>
@@ -29,15 +29,15 @@
 
     <repositories>
         <repository>
-            <id>spigotmc</id>
-            <url>http://repo.mikeprimm.com/</url>
+            <id>papermc</id>
+            <url>https://repo.aikar.co/nexus/content/repositories/aikar/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <groupId>org.github.paperspigot</groupId>
+            <artifactId>paperspigot-api</artifactId>
             <version>1.7.10-R0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

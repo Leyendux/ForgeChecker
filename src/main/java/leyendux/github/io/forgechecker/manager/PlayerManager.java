@@ -1,11 +1,10 @@
 package leyendux.github.io.forgechecker.manager;
 
 import leyendux.github.io.forgechecker.player.ServerPlayer;
+import leyendux.github.io.forgechecker.util.MethodUtils;
+import net.md_5.bungee.api.chat.TextComponent;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class PlayerManager {
 
@@ -28,10 +27,21 @@ public class PlayerManager {
 
     public boolean availableServerPlayer(UUID uuid) { return serverPlayers.containsKey(uuid); }
 
-    public Set<String> getForgeUsers() {
+    public LinkedList<TextComponent> getForgeUsers() {
+        LinkedList<TextComponent> forgeUsers = new LinkedList<TextComponent>();
+        for(ServerPlayer serverPlayer : serverPlayers.values()) {
+            if(serverPlayer.isForgeUser() && serverPlayer.getPlayer().isOnline()) {
+                TextComponent player = MethodUtils.createClickableChat("§e" + serverPlayer.getName(), "/forgecheck " + serverPlayer.getName(), "§aClick to check " + serverPlayer.getName() + "'s mods", "RUN_COMMAND");
+                forgeUsers.add(player);
+            }
+        }
+        return forgeUsers;
+    }
+
+    public Set<String> getForgeUsersRaw() {
         Set<String> forgeUsers = new HashSet<String>();
         for(ServerPlayer serverPlayer : serverPlayers.values()) {
-            if(serverPlayer.isForgeUser()) {
+            if(serverPlayer.isForgeUser() && serverPlayer.getPlayer().isOnline()) {
                 forgeUsers.add(serverPlayer.getName());
             }
         }

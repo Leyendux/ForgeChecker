@@ -10,10 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MethodUtils {
 
@@ -48,6 +45,19 @@ public class MethodUtils {
                 .replace("[", "§8[§e")
                 .replace("]", "§8]")
                 .replace(",", "§8,§e");
+        return mods;
+    }
+
+    public static TextComponent formatForgeUsers(LinkedList<TextComponent> forgeUsers) {
+        TextComponent mods = new TextComponent("§8» §e" + forgeUsers.size() + " players found:\n§8» §8[");
+        for(int i = 0; i < forgeUsers.size(); i++) {
+            mods.addExtra(forgeUsers.get(i));
+            if((i + 1) == forgeUsers.size()) {
+                mods.addExtra("§8]");
+            } else {
+                mods.addExtra("§8, ");
+            }
+        }
         return mods;
     }
 

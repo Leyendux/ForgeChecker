@@ -6,7 +6,6 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 public class ForgeUserJoinEvent extends Event {

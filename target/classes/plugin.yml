@@ -1,6 +1,6 @@
 name: LeyenduxForgeChecker
 main: leyendux.github.io.forgechecker.Main
-version: 1.0.2
+version: 1.0.3-SNAPSHOT
 
 description: Plugin made to check forge mods of all players from the server.
 author: Leyendux

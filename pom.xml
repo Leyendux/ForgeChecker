@@ -6,7 +6,7 @@
 
     <groupId>leyendux.github.io</groupId>
     <artifactId>ForgeChecker</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <build>
         <resources>

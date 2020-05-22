@@ -14,6 +14,8 @@ import java.util.*;
 
 public class MethodUtils {
 
+    public static LinkedList<String> blockedModList = new LinkedList<String>();
+
     //Easy method to broadcast all members that has the permission that is set in StringUtils class
     public static void broadcastStaff(TextComponent message) {
         for(Player player : Bukkit.getServer().getOnlinePlayers()) {
@@ -30,12 +32,35 @@ public class MethodUtils {
         return (short) (seconds * 20 / 1);
     }
 
-    public static String formatModList(Set<String> modList) {
+    public static String formatModListRaw(Set<String> modList) {
         String mods = "§8» §e" + modList.size() + " mods found:\n" +
                 "§8» §e" + modList.toString()
                 .replace("[", "§8[§e")
                 .replace("]", "§8]")
                 .replace(",", "§8,§e");
+        return mods;
+    }
+
+    public static TextComponent formatModList(Set<String> modList) {
+        LinkedList<TextComponent> modNames = new LinkedList<TextComponent>();
+        for(String modNameRaw : modList) {
+            if(blockedModList.contains(modNameRaw)) {
+                TextComponent modName = createClickableChat("§c" + modNameRaw, "/removeallowed " + modNameRaw, "§8(§a✓§8)", "RUN_COMMAND");
+                modNames.add(modName);
+            } else {
+                TextComponent modName = createClickableChat("§e" + modNameRaw, "/addallowed " + modNameRaw, "§8(§c✗§8)", "RUN_COMMAND");
+                modNames.add(modName);
+            }
+        }
+        TextComponent mods = new TextComponent("§8» §e" + modList.size() + " mods found: \n§8» §8[");
+        for(int i = 0; i < modList.size(); i++) {
+            mods.addExtra(modNames.get(i));
+            if((i + 1) == modList.size()) {
+                mods.addExtra("§8]");
+            } else {
+                mods.addExtra("§8, ");
+            }
+        }
         return mods;
     }
 

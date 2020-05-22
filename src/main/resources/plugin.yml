@@ -2,6 +2,8 @@ name: LeyenduxForgeChecker
 main: leyendux.github.io.forgechecker.Main
 version: ${project.version}
 
+database: true
+
 description: Plugin made to check forge mods of all players from the server.
 author: Leyendux
 website: https://github.com/Leyendux
@@ -17,3 +19,7 @@ commands:
     permission: uhc.mod
     permission-message: §cThis command is only made for mods, sorry!
     usage: §c/<command>
+  addallowed:
+    permission: uhc.mod
+  removeallowed:
+    permission: uhc.mod

@@ -8,6 +8,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class ForgeCheckCMD implements CommandExecutor {
 
@@ -26,7 +27,12 @@ public class ForgeCheckCMD implements CommandExecutor {
             commandSender.sendMessage(ChatColor.RED + "This player is not using Forge!");
             return true;
         }
-        commandSender.sendMessage(MethodUtils.formatModList(serverPlayer.getModList()));
+        if(commandSender instanceof Player) {
+            Player player = (Player) commandSender;
+            player.spigot().sendMessage(MethodUtils.formatModList(serverPlayer.getModList()));
+        } else {
+            commandSender.sendMessage(MethodUtils.formatModListRaw(serverPlayer.getModList()));
+        }
         return true;
     }
 }

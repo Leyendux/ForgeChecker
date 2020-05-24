@@ -30,7 +30,7 @@ public class PlayerManager {
     public LinkedList<TextComponent> getForgeUsers() {
         LinkedList<TextComponent> forgeUsers = new LinkedList<TextComponent>();
         for(ServerPlayer serverPlayer : serverPlayers.values()) {
-            if(serverPlayer.isForgeUser() && serverPlayer.getPlayer().isOnline()) {
+            if(serverPlayer.isForgeUser() && serverPlayer.getOfflinePlayer().isOnline()) {
                 TextComponent player = MethodUtils.createClickableChat("§e" + serverPlayer.getName(), "/forgecheck " + serverPlayer.getName(), "§aClick to check " + serverPlayer.getName() + "'s mods", "RUN_COMMAND");
                 forgeUsers.add(player);
             }
@@ -41,7 +41,7 @@ public class PlayerManager {
     public Set<String> getForgeUsersRaw() {
         Set<String> forgeUsers = new HashSet<String>();
         for(ServerPlayer serverPlayer : serverPlayers.values()) {
-            if(serverPlayer.isForgeUser() && serverPlayer.getPlayer().isOnline()) {
+            if(serverPlayer.isForgeUser() && serverPlayer.getOfflinePlayer().isOnline()) {
                 forgeUsers.add(serverPlayer.getName());
             }
         }

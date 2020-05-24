@@ -4,6 +4,7 @@ import leyendux.github.io.forgechecker.Main;
 import leyendux.github.io.forgechecker.util.MethodUtils;
 import leyendux.github.io.forgechecker.util.StringUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -21,6 +22,8 @@ public class ServerPlayer {
     public String getName() { return Bukkit.getOfflinePlayer(uuid).getName(); }
 
     public Player getPlayer() { return Bukkit.getPlayer(uuid); }
+
+    public OfflinePlayer getOfflinePlayer() { return Bukkit.getOfflinePlayer(uuid); }
 
     public boolean isForgeUser() { return forgeUser; }
 
